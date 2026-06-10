@@ -29,14 +29,14 @@ export function ApplicationManagementCard({
 
   return (
     <>
-      <Card className="overflow-hidden px-[17px] py-[15px]">
-        <div className="mb-[15px] flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-[12px] font-bold leading-none text-[var(--muldhon-text)] sm:text-[13px]">
+      <Card className="overflow-hidden px-7 py-6">
+        <div className="mb-7 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <h2 className="text-[20px] font-bold leading-none text-[var(--muldhon-text)]">
             Application Management
           </h2>
 
           <div
-            className="inline-flex w-full max-w-full rounded-full bg-[#e2f8ea] p-[3px] sm:w-[252px]"
+            className="grid h-[55px] w-full grid-cols-4 rounded-full bg-[#e2f8ea] p-[6px] lg:w-[500px]"
             role="tablist"
             aria-label="Application status"
           >
@@ -47,7 +47,7 @@ export function ApplicationManagementCard({
                 role="tab"
                 aria-selected={activeTab === tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`h-[20px] flex-1 rounded-full px-2 text-[9px] font-medium leading-none transition-colors ${
+                className={`rounded-full text-[13px] font-medium transition-colors ${
                   activeTab === tab.id
                     ? "bg-white text-[var(--muldhon-text)] shadow-sm"
                     : "text-[var(--muldhon-text-muted)] hover:text-[var(--muldhon-text)]"
@@ -59,42 +59,42 @@ export function ApplicationManagementCard({
           </div>
         </div>
 
-        <ul className="space-y-[11px]">
+        <ul className="space-y-6">
           {filtered.length === 0 ? (
-            <li className="py-8 text-center text-[12px] text-[var(--muldhon-text-muted)]">
+            <li className="py-10 text-center text-[14px] text-[var(--muldhon-text-muted)]">
               No applications in this category.
             </li>
           ) : (
             filtered.map((applicant) => (
               <li
                 key={applicant.id}
-                className="grid gap-3 rounded-[10px] bg-white sm:grid-cols-[minmax(0,1.4fr)_minmax(116px,0.8fr)_52px_68px] sm:items-center"
+                className="grid gap-4 rounded-[10px] bg-white lg:grid-cols-[minmax(220px,1.2fr)_minmax(160px,0.9fr)_minmax(90px,0.5fr)_120px] lg:items-center"
               >
-                <div className="flex min-w-0 items-center gap-[9px]">
-                  <UserAvatar name={applicant.name} size="sm" className="h-[31px] w-[31px]" />
+                <div className="flex min-w-0 items-center gap-5">
+                  <UserAvatar name={applicant.name} size="sm" className="h-[54px] w-[54px]" />
                   <div className="min-w-0">
-                    <p className="truncate text-[10px] font-bold leading-none text-[var(--muldhon-text)]">
+                    <p className="truncate text-[15px] font-bold leading-none text-[var(--muldhon-text)]">
                       {applicant.name}
                     </p>
-                    <p className="mt-[4px] truncate text-[8px] leading-none text-[var(--muldhon-text)]">
+                    <p className="mt-2 truncate text-[13px] leading-none text-[var(--muldhon-text)]">
                       {applicant.email}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-[9px] font-medium leading-none text-[var(--muldhon-text)]">
+                <p className="text-[14px] font-bold leading-none text-[var(--muldhon-text)]">
                   {applicant.phone}
                 </p>
 
-                <p className="text-[9px] font-medium leading-none text-[var(--muldhon-text)]">
+                <p className="text-[14px] font-bold leading-none text-[var(--muldhon-text)]">
                   {applicant.date}
                 </p>
 
-                <div className="flex justify-start sm:justify-end">
+                <div className="flex justify-start lg:justify-end">
                   <button
                     type="button"
                     onClick={() => setSelectedApplicant(applicant)}
-                    className="h-[23px] w-[57px] rounded-full border border-[var(--muldhon-border)] bg-white text-[8px] font-medium text-[var(--muldhon-text)] shadow-[0_2px_8px_rgba(17,24,39,0.13)] hover:bg-gray-50"
+                    className="h-[36px] w-[106px] rounded-full border border-[#777] bg-white text-[13px] font-medium text-[var(--muldhon-text)] hover:bg-gray-50"
                   >
                     Review
                   </button>

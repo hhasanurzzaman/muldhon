@@ -12,33 +12,33 @@ interface RecentActivityCardProps {
 
 export function RecentActivityCard({ items }: RecentActivityCardProps) {
   return (
-    <Card className="flex h-[249px] flex-col px-[17px] py-[15px]">
-      <div className="mb-3">
-        <h2 className="text-[17px] font-bold leading-none text-[var(--muldhon-text)]">
+    <Card className="flex h-[268px] flex-col px-5 py-5">
+      <div className="mb-5">
+        <h2 className="text-[18px] font-bold leading-none text-[var(--muldhon-text)]">
           Recent activity
         </h2>
       </div>
 
-      <ul className="flex-1 space-y-[7px]">
+      <ul className="flex-1 space-y-[13px]">
         {items.map((item, index) => (
           <li
             key={item.id}
-            className={`flex items-center gap-[18px] rounded-none px-0 py-[2px] ${
+            className={`flex items-center gap-4 rounded-[6px] px-0 py-[2px] ${
               index === items.length - 1
                 ? "outline outline-2 outline-[#18a8e0] outline-offset-[-2px]"
                 : ""
             }`}
           >
             <div
-              className="h-[26px] w-[28px] shrink-0 rounded-[7px] bg-[#d9d9d9]"
+              className="h-8 w-8 shrink-0 rounded-[8px] bg-[#d7d7d7]"
               aria-hidden
             />
             <div className="min-w-0 flex-1">
-              <p className="truncate text-[11px] leading-none text-[var(--muldhon-text)]">
+              <p className="truncate text-[12px] font-medium leading-none text-[var(--muldhon-text)]">
                 {item.description}
               </p>
             </div>
-            <span className="shrink-0 text-[10px] leading-none text-[var(--muldhon-text)]">
+            <span className="shrink-0 text-[11px] leading-none text-[var(--muldhon-text-muted)]">
               {item.timeAgo}
             </span>
           </li>

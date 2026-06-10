@@ -33,37 +33,37 @@ export function AccountsCard({ accounts }: AccountsCardProps) {
 
   return (
     <>
-      <Card className="flex h-[215px] flex-col px-[17px] py-[15px]">
-        <div className="mb-[12px]">
-          <h2 className="mb-[12px] text-[12px] font-bold leading-none text-[var(--muldhon-text)] sm:text-[13px]">
+      <Card className="flex h-[450px] flex-col px-7 py-6">
+        <div className="mb-8">
+          <h2 className="mb-7 text-[20px] font-bold leading-none text-[var(--muldhon-text)]">
             Accounts
           </h2>
           <div className="relative">
-            <Search className="pointer-events-none absolute left-[15px] top-1/2 h-[10px] w-[10px] -translate-y-1/2 text-[var(--muldhon-green-dark)]" />
+            <Search className="pointer-events-none absolute left-6 top-1/2 h-[16px] w-[16px] -translate-y-1/2 text-[var(--muldhon-green-dark)]" />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by Name or ID"
-              className="h-[24px] w-full rounded-full border-0 bg-[#e2f8ea] pl-[31px] pr-4 text-[8px] text-[var(--muldhon-text)] outline-none placeholder:text-[var(--muldhon-text-muted)] focus:ring-2 focus:ring-[var(--muldhon-green)]/30"
+              className="h-[48px] w-full rounded-full border-0 bg-[#e2f8ea] pl-[56px] pr-5 text-[13px] text-[var(--muldhon-text)] outline-none placeholder:text-[var(--muldhon-text-muted)] focus:ring-2 focus:ring-[var(--muldhon-green)]/30"
               aria-label="Search accounts"
             />
           </div>
         </div>
 
-        <ul className="flex-1 space-y-[10px] overflow-hidden">
+        <ul className="flex-1 space-y-5 overflow-hidden">
           {filtered.map((account) => (
             <li
               key={account.id}
               className="flex items-center justify-between gap-3"
             >
-              <div className="flex min-w-0 items-center gap-[9px]">
-                <UserAvatar name={account.name} size="sm" className="h-[31px] w-[31px]" />
+              <div className="flex min-w-0 items-center gap-5">
+                <UserAvatar name={account.name} size="sm" className="h-[52px] w-[52px]" />
                 <div className="min-w-0">
-                  <p className="truncate text-[10px] font-bold leading-none text-[var(--muldhon-text)]">
+                  <p className="truncate text-[15px] font-medium leading-none text-[var(--muldhon-text)]">
                     {account.name}
                   </p>
-                  <p className="mt-[4px] truncate text-[8px] leading-none text-[var(--muldhon-text)]">
+                  <p className="mt-2 truncate text-[13px] leading-none text-[var(--muldhon-text)]">
                     {account.email}
                   </p>
                 </div>
@@ -71,22 +71,22 @@ export function AccountsCard({ accounts }: AccountsCardProps) {
               <button
                 type="button"
                 onClick={() => setSelectedAccount(account)}
-                className="flex h-[23px] w-[57px] shrink-0 items-center justify-center gap-1 rounded-full border border-[var(--muldhon-border)] bg-white text-[8px] font-medium text-[var(--muldhon-text)] shadow-[0_2px_8px_rgba(17,24,39,0.13)] hover:bg-gray-50"
+                className="flex h-[40px] w-[125px] shrink-0 items-center justify-center gap-4 rounded-full border border-[#a7a7a7] bg-white text-[13px] font-medium text-[var(--muldhon-text)] hover:bg-gray-50"
               >
                 Details
-                <ChevronRight className="h-[11px] w-[11px]" />
+                <ChevronRight className="h-[17px] w-[17px]" />
               </button>
             </li>
           ))}
         </ul>
 
-        <div className="flex justify-center pt-[2px]">
+        <div className="flex justify-center pt-2">
           <button
             type="button"
-            className="flex h-[14px] w-[14px] items-center justify-center rounded-full border border-[var(--muldhon-text)] text-[var(--muldhon-text)] hover:bg-gray-50"
+            className="flex h-[18px] w-[18px] items-center justify-center rounded-full border border-[var(--muldhon-text)] text-[var(--muldhon-text)] hover:bg-gray-50"
             aria-label="Load more accounts"
           >
-            <ChevronDown className="h-[9px] w-[9px]" />
+            <ChevronDown className="h-3 w-3" />
           </button>
         </div>
       </Card>

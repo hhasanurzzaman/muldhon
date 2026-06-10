@@ -21,8 +21,8 @@ export function StatusListCard({
   children,
 }: StatusListCardProps) {
   return (
-    <Card className="h-[157px] px-[17px] py-[17px]">
-      <h2 className="mb-[18px] text-[17px] font-bold leading-none text-[var(--muldhon-text)]">
+    <Card className="h-[166px] px-5 py-5">
+      <h2 className="mb-5 text-[18px] font-bold leading-none text-[var(--muldhon-text)]">
         {title}
       </h2>
       <ul className="space-y-[13px]">
@@ -31,7 +31,7 @@ export function StatusListCard({
             key={row.label}
             className="flex items-center justify-between text-[12px] leading-none"
           >
-            <span className="text-[var(--muldhon-text)]">{row.label}</span>
+            <span className="text-[var(--muldhon-text-muted)]">{row.label}</span>
             <span
               className={`font-medium ${
                 row.valueHighlight === "success"

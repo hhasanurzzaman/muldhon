@@ -58,15 +58,16 @@ export const investmentSummary = {
 };
 
 export const investmentChartData: InvestmentChartPoint[] = [
-  { month: "Jan", amount: 1500000 },
-  { month: "Feb", amount: 2300000 },
+  { month: "Jan", amount: 1700000 },
+  { month: "Feb", amount: 2350000 },
   { month: "Mar", amount: 1650000 },
   { month: "Apr", amount: 1200000 },
   { month: "May", amount: 850000 },
-  { month: "Jun", amount: 2600000 },
-  { month: "Jul", amount: 3500000 },
-  { month: "Aug", amount: 4000000 },
-  { month: "Sep", amount: 5600000 },
+  { month: "Jun", amount: 2550000 },
+  { month: "Jul", amount: 3450000 },
+  { month: "Aug", amount: 3950000 },
+  { month: "Sep", amount: 4550000 },
+  { month: "Oct", amount: 6100000 },
 ];
 
 export const projectsList: ProjectListItem[] = [

@@ -18,25 +18,25 @@ export function SystemStatusCard() {
       footer={
       <div className="mt-[13px] space-y-[13px]">
         <div className="flex items-center justify-between text-[12px] leading-none">
-          <span className="text-[var(--muldhon-text)]">Maintenance Mode</span>
+          <span className="text-[var(--muldhon-text-muted)]">Maintenance Mode</span>
           <button
             type="button"
             role="switch"
             aria-checked={maintenance}
             onClick={() => setMaintenance((v) => !v)}
-            className={`relative h-[16px] w-[32px] rounded-full transition-colors ${
+            className={`relative h-4 w-8 rounded-full transition-colors ${
               maintenance ? "bg-[var(--muldhon-green)]" : "bg-[#d9d9d9]"
             }`}
           >
             <span
-              className={`absolute left-[2px] top-[2px] h-[12px] w-[12px] rounded-full bg-[#6b6b6b] transition-transform ${
+              className={`absolute left-[2px] top-[2px] h-3 w-3 rounded-full bg-[#6b6b6b] transition-transform ${
                 maintenance ? "translate-x-4 bg-white" : "translate-x-0"
               }`}
             />
           </button>
         </div>
         <div className="flex items-center justify-between text-[12px] leading-none">
-          <span className="text-[var(--muldhon-text)]">Server Status</span>
+          <span className="text-[var(--muldhon-text-muted)]">Server Status</span>
           <span className="font-medium text-[var(--muldhon-green)]">Online</span>
         </div>
       </div>

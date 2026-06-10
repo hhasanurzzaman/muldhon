@@ -14,14 +14,14 @@ interface ProjectsCardProps {
 
 export function ProjectsCard({ projects }: ProjectsCardProps) {
   return (
-    <Card className="flex h-[340px] flex-col px-[17px] py-[17px]">
-      <div className="mb-[17px] flex items-center justify-between gap-3">
-        <h2 className="text-[17px] font-bold leading-none text-[var(--muldhon-text)]">
+    <Card className="flex h-[424px] flex-col px-6 py-6">
+      <div className="mb-5 flex items-center justify-between gap-3">
+        <h2 className="text-[18px] font-bold leading-none text-[var(--muldhon-text)]">
           Projects
         </h2>
         <button
           type="button"
-          className="flex h-[33px] w-[87px] items-center justify-center gap-2 rounded-full border border-[var(--muldhon-border)] bg-white text-[11px] font-medium text-[var(--muldhon-text)] shadow-[0_2px_9px_rgba(17,24,39,0.13)]"
+          className="flex h-9 w-[100px] items-center justify-center gap-2 rounded-full border border-[#d6d6d6] bg-white text-[12px] font-medium text-[var(--muldhon-text)] shadow-[0_4px_12px_rgba(17,24,39,0.12)]"
         >
           Pending
           <ChevronDown className="h-3 w-3 text-[var(--muldhon-text)]" />
@@ -32,32 +32,32 @@ export function ProjectsCard({ projects }: ProjectsCardProps) {
         {projects.map((project) => (
           <li
             key={project.id}
-            className="flex items-center justify-between gap-3 py-[12px] first:pt-0"
+            className="flex items-center justify-between gap-4 py-[15px] first:pt-0"
           >
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
-                <span className="truncate text-[13px] font-medium leading-none text-[var(--muldhon-text)]">
+                <span className="truncate text-[14px] font-semibold leading-none text-[var(--muldhon-text)]">
                   {project.name}
                 </span>
                 {project.verified && (
                   <BadgeCheck
-                    className="h-[14px] w-[14px] shrink-0 text-[#e9ff00]"
+                    className="h-4 w-4 shrink-0 text-[#e9ff00]"
                     fill="currentColor"
                     stroke="white"
                     strokeWidth={2}
                   />
                 )}
               </div>
-              <p className="mt-[5px] text-[10px] leading-none text-[var(--muldhon-text)]">
+              <p className="mt-[6px] text-[11px] leading-none text-[var(--muldhon-text-muted)]">
                 Budget: {project.budgetBdt.toLocaleString()} BDT
               </p>
-              <p className="mt-[3px] text-[10px] leading-none text-[var(--muldhon-text)]">
+              <p className="mt-1 text-[11px] leading-none text-[var(--muldhon-text-muted)]">
                 User: {project.userName}
               </p>
             </div>
             <button
               type="button"
-              className="flex h-[31px] w-[86px] shrink-0 items-center justify-center gap-3 rounded-full border border-[var(--muldhon-border)] bg-white text-[11px] font-medium text-[var(--muldhon-text)] shadow-[0_2px_9px_rgba(17,24,39,0.13)] hover:bg-gray-50"
+              className="flex h-9 w-[100px] shrink-0 items-center justify-center gap-3 rounded-full border border-[#d6d6d6] bg-white text-[12px] font-medium text-[var(--muldhon-text)] shadow-[0_4px_12px_rgba(17,24,39,0.12)] hover:bg-gray-50"
             >
               Details
               <ChevronRight className="h-4 w-4" />

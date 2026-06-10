@@ -29,7 +29,7 @@
 }
 
 body {
-  background: #6b6060;
+  background: var(--muldhon-bg);
   color: var(--muldhon-text);
   font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;

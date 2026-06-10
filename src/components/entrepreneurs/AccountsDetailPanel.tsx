@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/Card";
 
 export function AccountsDetailPanel() {
   return (
-    <Card className="h-[215px]">
+    <Card className="h-[450px]">
       <span className="sr-only">Account details panel</span>
     </Card>
   );

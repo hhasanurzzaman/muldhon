@@ -23,9 +23,9 @@ export default function DashboardPage() {
     <>
       <PageTitle>Dashboard</PageTitle>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-[minmax(0,1fr)_minmax(340px,1fr)] md:gap-[17px] xl:grid-cols-[minmax(0,1fr)_minmax(366px,1fr)]">
-        <div className="flex min-w-0 flex-col gap-[18px]">
-          <section className="grid grid-cols-1 gap-[17px] sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-[22px] xl:grid-cols-[minmax(560px,1fr)_minmax(470px,0.92fr)]">
+        <div className="mx-auto flex w-full max-w-[660px] min-w-0 flex-col gap-[22px] xl:mx-0 xl:max-w-none">
+          <section className="grid grid-cols-1 gap-[18px] sm:grid-cols-2">
             {statMetrics.map((metric) => (
               <StatCard key={metric.id} metric={metric} />
             ))}
@@ -34,7 +34,7 @@ export default function DashboardPage() {
           <ProjectsCard projects={projectsList} />
         </div>
 
-        <div className="flex min-w-0 flex-col gap-[18px]">
+        <div className="mx-auto flex w-full max-w-[620px] min-w-0 flex-col gap-[22px] xl:mx-0 xl:max-w-none">
           <InvestmentChartCard
             label={investmentSummary.label}
             value={investmentSummary.value}
@@ -44,7 +44,7 @@ export default function DashboardPage() {
 
           <RecentActivityCard items={recentActivity} />
 
-          <section className="grid grid-cols-1 gap-[17px] sm:grid-cols-2">
+          <section className="grid grid-cols-1 gap-[22px] sm:grid-cols-2">
             <StatusListCard title="Project Status" rows={projectStatusRows} />
             <SystemStatusCard />
           </section>
