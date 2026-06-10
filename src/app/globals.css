@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/**
+ * Muldhon admin design tokens — align with dashboard mockup.
+ * Adjust hex values here for pixel-perfect tuning.
+ */
+:root {
+  --muldhon-bg: #ffffff;
+  --muldhon-card: #ffffff;
+  --muldhon-border: #dedede;
+  --muldhon-green: #0aa05a;
+  --muldhon-green-dark: #087c45;
+  --muldhon-green-light: #cff2dd;
+  --muldhon-text: #2b2b2b;
+  --muldhon-text-muted: #646464;
+  --muldhon-sidebar-width: 228px;
+}
+
+@theme inline {
+  --color-muldhon-bg: var(--muldhon-bg);
+  --color-muldhon-card: var(--muldhon-card);
+  --color-muldhon-border: var(--muldhon-border);
+  --color-muldhon-green: var(--muldhon-green);
+  --color-muldhon-green-dark: var(--muldhon-green-dark);
+  --color-muldhon-green-light: var(--muldhon-green-light);
+  --color-muldhon-text: var(--muldhon-text);
+  --color-muldhon-text-muted: var(--muldhon-text-muted);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: #6b6060;
+  color: var(--muldhon-text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth horizontal scroll for wide tables on small screens */
+.scroll-table-x {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+
+/* Recharts: hide default focus outline on chart */
+.recharts-wrapper:focus {
+  outline: none;
+}
