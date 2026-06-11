@@ -30,14 +30,14 @@ function InvestorApplicationCard() {
 
   return (
     <>
-      <Card className="px-7 py-6">
+      <Card className="px-4 py-5 sm:px-7 sm:py-6">
         <div className="mb-7 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <h2 className="text-[20px] font-bold leading-none text-[var(--muldhon-text)]">
             Application Management
           </h2>
 
           <div
-            className="grid h-[55px] w-full grid-cols-4 rounded-full bg-[#e2f8ea] p-[6px] lg:w-[500px]"
+            className="grid min-h-[48px] w-full grid-cols-2 gap-1 rounded-[18px] bg-[#e2f8ea] p-[6px] sm:grid-cols-4 sm:rounded-full lg:h-[55px] lg:w-[500px]"
             role="tablist"
             aria-label="Investor application status"
           >
@@ -48,7 +48,7 @@ function InvestorApplicationCard() {
                 role="tab"
                 aria-selected={activeTab === tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`rounded-full text-[13px] font-medium transition-colors ${
+                className={`min-h-9 rounded-full text-[12px] font-medium transition-colors sm:text-[13px] ${
                   activeTab === tab.id
                     ? "bg-white text-[var(--muldhon-text)] shadow-sm"
                     : "text-[var(--muldhon-text-muted)] hover:text-[var(--muldhon-text)]"
@@ -60,18 +60,14 @@ function InvestorApplicationCard() {
           </div>
         </div>
 
-        <ul className="space-y-6">
+        <ul className="space-y-5 sm:space-y-6">
           {filteredApplicants.map((applicant) => (
             <li
               key={applicant.id}
-              className="grid gap-4 lg:grid-cols-[minmax(220px,1.2fr)_minmax(160px,0.9fr)_minmax(90px,0.5fr)_120px] lg:items-center"
+              className="grid gap-3 rounded-[14px] border border-[#eeeeee] p-4 lg:grid-cols-[minmax(220px,1.2fr)_minmax(160px,0.9fr)_minmax(90px,0.5fr)_120px] lg:items-center lg:border-0 lg:p-0"
             >
               <div className="flex min-w-0 items-center gap-5">
-                <UserAvatar
-                  name={applicant.name}
-                  size="sm"
-                  className="h-[54px] w-[54px]"
-                />
+                <UserAvatar name={applicant.name} size="sm" className="h-12 w-12 sm:h-[54px] sm:w-[54px]" />
                 <div className="min-w-0">
                   <p className="truncate text-[15px] font-bold leading-none text-[var(--muldhon-text)]">
                     {applicant.name}
@@ -82,17 +78,17 @@ function InvestorApplicationCard() {
                 </div>
               </div>
 
-              <p className="text-[14px] font-bold leading-none text-[var(--muldhon-text)]">
+              <p className="text-[13px] font-bold leading-none text-[var(--muldhon-text)] sm:text-[14px]">
                 {applicant.phone}
               </p>
-              <p className="text-[14px] font-bold leading-none text-[var(--muldhon-text)]">
+              <p className="text-[13px] font-bold leading-none text-[var(--muldhon-text)] sm:text-[14px]">
                 {applicant.date}
               </p>
 
               <button
                 type="button"
                 onClick={() => setSelectedApplicant(applicant)}
-                className="h-[36px] w-[106px] rounded-full border border-[#777] bg-white text-[13px] font-medium text-[var(--muldhon-text)] hover:bg-gray-50"
+                className="h-10 w-full rounded-full border border-[#777] bg-white text-[13px] font-medium text-[var(--muldhon-text)] hover:bg-gray-50 sm:w-[106px]"
               >
                 Review
               </button>
@@ -130,31 +126,27 @@ function InvestorAccountsCard() {
 
   return (
     <>
-      <Card className="flex h-[450px] flex-col px-7 py-6">
+      <Card className="flex min-h-[450px] flex-col px-4 py-5 sm:h-[450px] sm:px-7 sm:py-6">
         <h2 className="mb-7 text-[20px] font-bold leading-none text-[var(--muldhon-text)]">
           Accounts
         </h2>
 
         <div className="relative mb-8">
-          <Search className="pointer-events-none absolute left-6 top-1/2 h-[16px] w-[16px] -translate-y-1/2 text-[var(--muldhon-green-dark)]" />
+          <Search className="pointer-events-none absolute left-5 top-1/2 h-[16px] w-[16px] -translate-y-1/2 text-[var(--muldhon-green-dark)] sm:left-6" />
           <input
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search by Name or ID"
-            className="h-[48px] w-full rounded-full border-0 bg-[#e2f8ea] pl-[56px] pr-5 text-[13px] text-[var(--muldhon-text)] outline-none placeholder:text-[var(--muldhon-text-muted)] focus:ring-2 focus:ring-[var(--muldhon-green)]/30"
+            className="h-[48px] w-full rounded-full border-0 bg-[#e2f8ea] pl-12 pr-5 text-[13px] text-[var(--muldhon-text)] outline-none placeholder:text-[var(--muldhon-text-muted)] focus:ring-2 focus:ring-[var(--muldhon-green)]/30 sm:pl-[56px]"
           />
         </div>
 
         <ul className="flex-1 space-y-5 overflow-hidden">
           {filteredAccounts.map((account) => (
-            <li key={account.id} className="flex items-center justify-between gap-4">
+            <li key={account.id} className="flex flex-col gap-3 rounded-[14px] border border-[#eeeeee] p-4 sm:flex-row sm:items-center sm:justify-between sm:border-0 sm:p-0">
               <div className="flex min-w-0 items-center gap-5">
-                <UserAvatar
-                  name={account.name}
-                  size="sm"
-                  className="h-[52px] w-[52px]"
-                />
+                <UserAvatar name={account.name} size="sm" className="h-12 w-12 sm:h-[52px] sm:w-[52px]" />
                 <div className="min-w-0">
                   <p className="truncate text-[15px] font-medium leading-none text-[var(--muldhon-text)]">
                     {account.name}
@@ -168,7 +160,7 @@ function InvestorAccountsCard() {
               <button
                 type="button"
                 onClick={() => setSelectedAccount(account)}
-                className="flex h-[40px] w-[125px] shrink-0 items-center justify-center gap-4 rounded-full border border-[#a7a7a7] bg-white text-[13px] font-medium text-[var(--muldhon-text)] hover:bg-gray-50"
+                className="flex h-[40px] w-full shrink-0 items-center justify-center gap-4 rounded-full border border-[#a7a7a7] bg-white text-[13px] font-medium text-[var(--muldhon-text)] hover:bg-gray-50 sm:w-[125px]"
               >
                 Details
                 <ChevronRight className="h-[17px] w-[17px]" />
@@ -211,7 +203,7 @@ export function InvestorsPanel() {
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <InvestorAccountsCard />
-        <Card className="h-[450px]">
+        <Card className="hidden h-[450px] xl:block">
           <span className="sr-only">Investor account details panel</span>
         </Card>
       </section>

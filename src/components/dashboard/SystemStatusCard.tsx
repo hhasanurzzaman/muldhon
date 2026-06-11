@@ -16,8 +16,8 @@ export function SystemStatusCard() {
       title="System Status"
       rows={systemStatusRows}
       footer={
-      <div className="mt-[13px] space-y-[13px]">
-        <div className="flex items-center justify-between text-[12px] leading-none">
+      <div className="mt-3 space-y-3">
+        <div className="flex items-center justify-between rounded-[10px] bg-[#fbfefd] px-3 py-2.5 text-[13px] leading-none">
           <span className="text-[var(--muldhon-text-muted)]">Maintenance Mode</span>
           <button
             type="button"
@@ -35,9 +35,9 @@ export function SystemStatusCard() {
             />
           </button>
         </div>
-        <div className="flex items-center justify-between text-[12px] leading-none">
+        <div className="flex items-center justify-between rounded-[10px] bg-[#fbfefd] px-3 py-2.5 text-[13px] leading-none">
           <span className="text-[var(--muldhon-text-muted)]">Server Status</span>
-          <span className="font-medium text-[var(--muldhon-green)]">Online</span>
+          <span className="font-semibold text-[var(--muldhon-green)]">Online</span>
         </div>
       </div>
       }

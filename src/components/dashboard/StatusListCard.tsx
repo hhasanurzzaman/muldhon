@@ -21,19 +21,19 @@ export function StatusListCard({
   children,
 }: StatusListCardProps) {
   return (
-    <Card className="h-[166px] px-5 py-5">
+    <Card className="min-h-[178px] px-5 py-5 sm:px-6">
       <h2 className="mb-5 text-[18px] font-bold leading-none text-[var(--muldhon-text)]">
         {title}
       </h2>
-      <ul className="space-y-[13px]">
+      <ul className="space-y-3">
         {rows.map((row) => (
           <li
             key={row.label}
-            className="flex items-center justify-between text-[12px] leading-none"
+            className="flex items-center justify-between rounded-[10px] bg-[#fbfefd] px-3 py-2.5 text-[13px] leading-none"
           >
             <span className="text-[var(--muldhon-text-muted)]">{row.label}</span>
             <span
-              className={`font-medium ${
+              className={`font-semibold ${
                 row.valueHighlight === "success"
                   ? "text-[var(--muldhon-green)]"
                   : "text-[var(--muldhon-text)]"

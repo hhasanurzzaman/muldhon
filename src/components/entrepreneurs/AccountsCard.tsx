@@ -33,19 +33,19 @@ export function AccountsCard({ accounts }: AccountsCardProps) {
 
   return (
     <>
-      <Card className="flex h-[450px] flex-col px-7 py-6">
+      <Card className="flex min-h-[450px] flex-col px-4 py-5 sm:h-[450px] sm:px-7 sm:py-6">
         <div className="mb-8">
           <h2 className="mb-7 text-[20px] font-bold leading-none text-[var(--muldhon-text)]">
             Accounts
           </h2>
           <div className="relative">
-            <Search className="pointer-events-none absolute left-6 top-1/2 h-[16px] w-[16px] -translate-y-1/2 text-[var(--muldhon-green-dark)]" />
+            <Search className="pointer-events-none absolute left-5 top-1/2 h-[16px] w-[16px] -translate-y-1/2 text-[var(--muldhon-green-dark)] sm:left-6" />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by Name or ID"
-              className="h-[48px] w-full rounded-full border-0 bg-[#e2f8ea] pl-[56px] pr-5 text-[13px] text-[var(--muldhon-text)] outline-none placeholder:text-[var(--muldhon-text-muted)] focus:ring-2 focus:ring-[var(--muldhon-green)]/30"
+              className="h-[48px] w-full rounded-full border-0 bg-[#e2f8ea] pl-12 pr-5 text-[13px] text-[var(--muldhon-text)] outline-none placeholder:text-[var(--muldhon-text-muted)] focus:ring-2 focus:ring-[var(--muldhon-green)]/30 sm:pl-[56px]"
               aria-label="Search accounts"
             />
           </div>
@@ -55,10 +55,10 @@ export function AccountsCard({ accounts }: AccountsCardProps) {
           {filtered.map((account) => (
             <li
               key={account.id}
-              className="flex items-center justify-between gap-3"
+              className="flex flex-col gap-3 rounded-[14px] border border-[#eeeeee] p-4 sm:flex-row sm:items-center sm:justify-between sm:border-0 sm:p-0"
             >
               <div className="flex min-w-0 items-center gap-5">
-                <UserAvatar name={account.name} size="sm" className="h-[52px] w-[52px]" />
+                <UserAvatar name={account.name} size="sm" className="h-12 w-12 sm:h-[52px] sm:w-[52px]" />
                 <div className="min-w-0">
                   <p className="truncate text-[15px] font-medium leading-none text-[var(--muldhon-text)]">
                     {account.name}
@@ -71,7 +71,7 @@ export function AccountsCard({ accounts }: AccountsCardProps) {
               <button
                 type="button"
                 onClick={() => setSelectedAccount(account)}
-                className="flex h-[40px] w-[125px] shrink-0 items-center justify-center gap-4 rounded-full border border-[#a7a7a7] bg-white text-[13px] font-medium text-[var(--muldhon-text)] hover:bg-gray-50"
+                className="flex h-[40px] w-full shrink-0 items-center justify-center gap-4 rounded-full border border-[#a7a7a7] bg-white text-[13px] font-medium text-[var(--muldhon-text)] hover:bg-gray-50 sm:w-[125px]"
               >
                 Details
                 <ChevronRight className="h-[17px] w-[17px]" />

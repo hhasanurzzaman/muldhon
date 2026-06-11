@@ -1,4 +1,4 @@
-import { PagePlaceholder } from "@/components/ui/PagePlaceholder";
+import { ReportsPanel } from "@/components/reports/ReportsPanel";
 import { createPageMetadata } from "@/lib/create-page";
 
 export const metadata = createPageMetadata("Reports");
@@ -9,7 +9,7 @@ export default function ReportsPage() {
       <h1 className="mb-6 text-[26px] font-bold text-[var(--muldhon-text)]">
         Reports
       </h1>
-      <PagePlaceholder title="Reports" />
+      <ReportsPanel />
     </>
   );
 }

@@ -14,29 +14,34 @@ interface ProjectsCardProps {
 
 export function ProjectsCard({ projects }: ProjectsCardProps) {
   return (
-    <Card className="flex h-[424px] flex-col px-6 py-6">
+    <Card className="flex min-h-[440px] flex-col overflow-hidden px-5 py-5 sm:px-6 sm:py-6">
       <div className="mb-5 flex items-center justify-between gap-3">
-        <h2 className="text-[18px] font-bold leading-none text-[var(--muldhon-text)]">
-          Projects
-        </h2>
+        <div>
+          <h2 className="text-[19px] font-bold leading-none text-[var(--muldhon-text)]">
+            Projects
+          </h2>
+          <p className="mt-2 text-[12px] font-medium text-[var(--muldhon-text-muted)]">
+            Latest applications and funding requests
+          </p>
+        </div>
         <button
           type="button"
-          className="flex h-9 w-[100px] items-center justify-center gap-2 rounded-full border border-[#d6d6d6] bg-white text-[12px] font-medium text-[var(--muldhon-text)] shadow-[0_4px_12px_rgba(17,24,39,0.12)]"
+          className="flex h-9 w-[104px] items-center justify-center gap-2 rounded-full border border-[#dfe8e2] bg-[#fbfefd] text-[12px] font-semibold text-[var(--muldhon-text)] shadow-[0_8px_18px_rgba(15,23,42,0.06)]"
         >
           Pending
           <ChevronDown className="h-3 w-3 text-[var(--muldhon-text)]" />
         </button>
       </div>
 
-      <ul className="flex-1 divide-y divide-[#e2e2e2]">
+      <ul className="flex-1 space-y-3">
         {projects.map((project) => (
           <li
             key={project.id}
-            className="flex items-center justify-between gap-4 py-[15px] first:pt-0"
+            className="flex items-center justify-between gap-4 rounded-[14px] border border-[#edf2ef] bg-[#fbfefd] px-4 py-3"
           >
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
-                <span className="truncate text-[14px] font-semibold leading-none text-[var(--muldhon-text)]">
+                <span className="truncate text-[15px] font-bold leading-none text-[var(--muldhon-text)]">
                   {project.name}
                 </span>
                 {project.verified && (
@@ -48,16 +53,16 @@ export function ProjectsCard({ projects }: ProjectsCardProps) {
                   />
                 )}
               </div>
-              <p className="mt-[6px] text-[11px] leading-none text-[var(--muldhon-text-muted)]">
+              <p className="mt-2 text-[12px] leading-none text-[var(--muldhon-text-muted)]">
                 Budget: {project.budgetBdt.toLocaleString()} BDT
               </p>
-              <p className="mt-1 text-[11px] leading-none text-[var(--muldhon-text-muted)]">
+              <p className="mt-1 text-[12px] leading-none text-[var(--muldhon-text-muted)]">
                 User: {project.userName}
               </p>
             </div>
             <button
               type="button"
-              className="flex h-9 w-[100px] shrink-0 items-center justify-center gap-3 rounded-full border border-[#d6d6d6] bg-white text-[12px] font-medium text-[var(--muldhon-text)] shadow-[0_4px_12px_rgba(17,24,39,0.12)] hover:bg-gray-50"
+              className="flex h-9 w-[100px] shrink-0 items-center justify-center gap-2 rounded-full border border-[#dfe8e2] bg-white text-[12px] font-semibold text-[var(--muldhon-text)] shadow-[0_8px_18px_rgba(15,23,42,0.05)] hover:bg-[#f7fbf8]"
             >
               Details
               <ChevronRight className="h-4 w-4" />
@@ -66,7 +71,7 @@ export function ProjectsCard({ projects }: ProjectsCardProps) {
         ))}
       </ul>
 
-      <div className="flex justify-center pt-1">
+      <div className="flex justify-center pt-4">
         <button
           type="button"
           className="flex h-[17px] w-[17px] items-center justify-center rounded-full border border-[var(--muldhon-text)] text-[var(--muldhon-text)] hover:bg-gray-50"

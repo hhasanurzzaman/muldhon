@@ -5,9 +5,9 @@
  * Adjust hex values here for pixel-perfect tuning.
  */
 :root {
-  --muldhon-bg: #ffffff;
+  --muldhon-bg: #f7faf8;
   --muldhon-card: #ffffff;
-  --muldhon-border: #dedede;
+  --muldhon-border: #e4ebe6;
   --muldhon-green: #0aa05a;
   --muldhon-green-dark: #087c45;
   --muldhon-green-light: #cff2dd;

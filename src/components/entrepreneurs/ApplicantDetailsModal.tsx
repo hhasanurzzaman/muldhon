@@ -44,55 +44,55 @@ export function ApplicantDetailsModal({ person, onClose }: ApplicantDetailsModal
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/55 p-4 backdrop-blur-[2px]"
+      className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-black/55 p-0 backdrop-blur-[2px] sm:items-center sm:p-4"
       role="dialog"
       aria-modal="true"
       aria-label="Applicant details"
       onMouseDown={onClose}
     >
       <div
-        className="relative w-full max-w-[760px] rounded-[18px] bg-white p-4 shadow-[0_24px_70px_rgba(0,0,0,0.28)]"
+        className="relative max-h-[100dvh] w-full overflow-y-auto rounded-t-[22px] bg-white p-3 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:max-h-[calc(100dvh-32px)] sm:max-w-[760px] sm:rounded-[18px] sm:p-4"
         onMouseDown={(event) => event.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-6 top-6 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm hover:bg-gray-100 hover:text-gray-700"
+          className="absolute right-5 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white text-gray-400 shadow-md hover:bg-gray-100 hover:text-gray-700 sm:right-6 sm:top-6 sm:h-8 sm:w-8"
           aria-label="Close details popup"
         >
           <X className="h-4 w-4" />
         </button>
 
-        <div className="grid overflow-hidden rounded-[12px] border-2 border-[#139dff] md:grid-cols-[1.18fr_0.82fr]">
-          <section className="border-b border-[#d7d7d7] p-7 md:border-b-0 md:border-r">
-            <div className="mb-6 flex items-start justify-between gap-3">
-              <h2 className="text-[18px] font-bold leading-none text-[var(--muldhon-text)]">
+        <div className="grid overflow-hidden rounded-[14px] border-2 border-[#139dff] md:grid-cols-[1.18fr_0.82fr]">
+          <section className="border-b border-[#d7d7d7] p-5 sm:p-7 md:border-b-0 md:border-r">
+            <div className="mb-5 flex flex-col gap-2 pr-10 sm:mb-6 sm:flex-row sm:items-start sm:justify-between sm:gap-3 sm:pr-0">
+              <h2 className="text-[17px] font-bold leading-none text-[var(--muldhon-text)] sm:text-[18px]">
                 Applicants Details
               </h2>
-              <span className="mt-1 text-[12px] font-semibold leading-none text-[var(--muldhon-text-muted)]">
+              <span className="text-[12px] font-semibold leading-none text-[var(--muldhon-text-muted)] sm:mt-1">
                 Today 4:87 PM
               </span>
             </div>
 
-            <div className="mb-7 flex items-center gap-4">
-              <UserAvatar name={person.name} size="sm" className="h-[54px] w-[54px]" />
+            <div className="mb-6 flex items-center gap-4 sm:mb-7">
+              <UserAvatar name={person.name} size="sm" className="h-12 w-12 sm:h-[54px] sm:w-[54px]" />
               <div className="min-w-0">
                 <p className="truncate text-[15px] font-bold leading-none text-[var(--muldhon-text)]">
                   {person.name}
                 </p>
-                <p className="mt-2 text-[12px] font-semibold leading-none text-[var(--muldhon-text)]">
+                <p className="mt-2 text-[12px] font-semibold leading-tight text-[var(--muldhon-text)]">
                   Application ID - {getApplicationId(person)}
                 </p>
               </div>
             </div>
 
-            <div className="space-y-6 text-[12px] leading-none text-[var(--muldhon-text)]">
+            <div className="space-y-5 text-[12px] leading-none text-[var(--muldhon-text)] sm:space-y-6">
               <div>
                 <h3 className="mb-3 text-[13px] font-bold">Personal Info</h3>
-                <div className="space-y-2 text-[12px]">
-                  <p>Phone No - <span className="ml-5">{getPhone(person)}</span></p>
+                <div className="space-y-2 text-[12px] leading-tight">
+                  <p>Phone No - <span className="ml-3 sm:ml-5">{getPhone(person)}</span></p>
                   <p>NID No -</p>
-                  <p>Email ID - <span className="ml-6">{person.email}</span></p>
+                  <p className="break-all">Email ID - <span className="ml-3 sm:ml-6">{person.email}</span></p>
                 </div>
               </div>
 
@@ -103,7 +103,7 @@ export function ApplicantDetailsModal({ person, onClose }: ApplicantDetailsModal
                   <p>Category</p>
                   <p>Description</p>
                 </div>
-                <div className="mt-3 h-[86px] rounded-[8px] border border-[#c9c9c9] bg-white" />
+                <div className="mt-3 h-[76px] rounded-[8px] border border-[#c9c9c9] bg-white sm:h-[86px]" />
               </div>
 
               <div>
@@ -127,12 +127,12 @@ export function ApplicantDetailsModal({ person, onClose }: ApplicantDetailsModal
             </div>
           </section>
 
-          <aside className="p-7">
+          <aside className="p-5 sm:p-7">
             <h2 className="mb-5 text-[18px] font-bold leading-none text-[var(--muldhon-text)]">
               Action
             </h2>
 
-            <div className="mb-8 space-y-3">
+            <div className="mb-7 grid grid-cols-1 gap-3 sm:mb-8">
               <button type="button" className="h-10 w-full rounded-full bg-[#9be3b4] text-[12px] font-semibold text-[#07864b] hover:brightness-95">
                 Accept Application
               </button>
@@ -145,7 +145,7 @@ export function ApplicantDetailsModal({ person, onClose }: ApplicantDetailsModal
               Account
             </h3>
 
-            <div className="mb-6 space-y-3">
+            <div className="mb-6 grid grid-cols-1 gap-3">
               <button type="button" className="h-10 w-full rounded-full bg-[#ffc8ad] text-[12px] font-semibold text-[#f37629] hover:brightness-95">
                 Suspend Account
               </button>
@@ -168,7 +168,7 @@ export function ApplicantDetailsModal({ person, onClose }: ApplicantDetailsModal
             <label className="mb-2 block text-[12px] font-bold text-[var(--muldhon-text)]">
               Details
             </label>
-            <textarea className="mb-6 h-[88px] w-full resize-none rounded-[8px] border border-[#c9c9c9] p-3 text-[12px] outline-none focus:border-[#139dff]" />
+            <textarea className="mb-6 h-[78px] w-full resize-none rounded-[8px] border border-[#c9c9c9] p-3 text-[12px] outline-none focus:border-[#139dff] sm:h-[88px]" />
 
             <button type="button" className="h-10 w-full rounded-full border border-[#c9c9c9] bg-white text-[12px] font-semibold text-[var(--muldhon-text)] hover:bg-gray-50">
               Save Changes

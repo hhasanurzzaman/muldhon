@@ -12,7 +12,7 @@ interface CardProps {
 export function Card({ children, className = "" }: CardProps) {
   return (
     <div
-      className={`rounded-[16px] border border-[#d8d8d8] bg-[var(--muldhon-card)] shadow-[0_5px_18px_rgba(17,24,39,0.12)] ${className}`}
+      className={`rounded-[18px] border border-[#e1e8e4] bg-[var(--muldhon-card)] shadow-[0_10px_30px_rgba(15,23,42,0.06)] ${className}`}
     >
       {children}
     </div>
